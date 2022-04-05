@@ -1,0 +1,14 @@
+//
+// Created by alejandra on 3/4/22.
+//
+
+#ifndef PROJECT01_MEMORYGAME_VIRTUALMEMORY_H
+#define PROJECT01_MEMORYGAME_VIRTUALMEMORY_H
+
+
+class VirtualMemory {
+
+};
+
+
+#endif //PROJECT01_MEMORYGAME_VIRTUALMEMORY_H
