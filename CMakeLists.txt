@@ -19,7 +19,7 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        Client.cpp Client.h Server.cpp Server.h Tarjeta.cpp Tarjeta.h VirtualMemory.cpp VirtualMemory.h)
+        Client.cpp Client.h Server.h Tarjeta.cpp Tarjeta.h VirtualMemory.cpp VirtualMemory.h)
 
 qt_add_executable(startServer Server.cpp)
 

@@ -28,4 +28,8 @@ public:
     void cardIsPlaying(){
         this->playing = true;
     }
+
+    void cardIsntPlating(){
+        this->playing = false;
+    }
 };

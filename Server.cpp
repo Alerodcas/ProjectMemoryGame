@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 int main() {
         // Create a socket
         int listening = socket(AF_INET, SOCK_STREAM, 0);
@@ -60,8 +59,8 @@ int main() {
         while (true) {
             memset(buf, 0, 4096);
 
-            string cardNumber1;
-            string cardNumber2;
+            string card1;
+            string card2;
             bool bothCards = false;
 
             // Wait for client to send data
@@ -77,23 +76,32 @@ int main() {
             }
 
             string received = string(buf,0,bytesReceived);
+            // Echo message back to client
+            string imgType = pagedArray.getCard(stoi(received));
+            send(clientSocket, imgType.c_str(), imgType.size() + 1, 0);
 
             while(bothCards == false){
-                if(cardNumber1 == ""){
-                    cardNumber1 = received;
+                if(card1 == ""){
+                    card1 = imgType;
+                    break;
                 }else{
-                    cardNumber2 = received;
+                    card2 = imgType;
                     //verificar si son iguales
                     bothCards = true;
                 }
             }
 
-            cout << string(buf, 0, bytesReceived) << endl;
+            /*
+            if(bothCards){
+                string points = pagedArray.compareCards(card1, card2);
+                send(clientSocket, points.c_str(), points.size() + 1, 0);
+                pagedArray.reset();
+                card1 = "";
+                card2 = "";
+            }
+             */
 
-            // Echo message back to client
-            send(clientSocket, buf, bytesReceived + 1, 0);
         }
-
         // Close the socket
         close(clientSocket);
 

@@ -6,7 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    Client client;
     ui->setupUi(this);
         ui->pushButton->setIcon(
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
@@ -73,5 +72,77 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    Client client;
+    int newIcon = client.startClient(1);
+
+    if (newIcon == 1){
+        ui->pushButton->setIcon(
+                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoA.png"));
+    }
+    if (newIcon == 2){
+        ui->pushButton->setIcon(
+                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoB.png"));
+    }
+    if (newIcon == 3){
+        ui->pushButton->setIcon(
+                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoC.png"));
+    }
+    if (newIcon == 4){
+        ui->pushButton->setIcon(
+                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoD.png"));
+    }
+    if (newIcon == 5){
+        ui->pushButton->setIcon(
+                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+    }
+
+}
+
+
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_6_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_12_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_8_clicked()
+{
+
 }
 

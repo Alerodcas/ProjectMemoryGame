@@ -106,18 +106,19 @@ public:
         return word;
     }
 
-    int getCardLocation(int cardNumber, bool firstOrSecond){
-        for(int i=0; i<5; i++) {
+    int getCardLocation(int cardNumber, bool firstOrSecond) {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
-                if(this->matriz_nums[i][j] == cardNumber){
-                    if(firstOrSecond){
+                if (this->matriz_nums[i][j] == cardNumber) {
+                    if (firstOrSecond) {
                         return i;
-                    }else{
+                    } else {
                         return j;
                     }
                 }
             }
         }
+        return 0;
     }
 
     tarjeta produce_random_card(){
@@ -223,5 +224,31 @@ public:
             this->t2.cardIsPlaying();
             return t2;
         }
+    }
+
+    string compareCards(string card1, string card2){
+        if(card1 == card2){
+            if(card1 == "TipoA"){
+                return "5";
+            }if(card1 == "TipoB"){
+                return "3";
+            }else{
+                return "1";
+            }
+        }
+        return "0";
+    }
+
+    void reset(){
+        this->t1.cardIsntPlating();
+        this->t2.cardIsntPlating();
+        this->t3.cardIsntPlating();
+        this->t4.cardIsntPlating();
+        this->t5.cardIsntPlating();
+        this->t6.cardIsntPlating();
+        this->t7.cardIsntPlating();
+        this->t8.cardIsntPlating();
+        this->t9.cardIsntPlating();
+        this->t10.cardIsntPlating();
     }
 };
