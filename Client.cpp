@@ -33,7 +33,7 @@ public:
         char buf[4096];
         string userInput = to_string(num);
         //While loop:
-        do {
+        while(true) {
             //Send to server
             int sendRes = send(sock, userInput.c_str(), userInput.size() + 1, 0);
             if (sendRes == -1) {
@@ -50,25 +50,28 @@ public:
                 string serverResponse = string(buf, 0,bytesReceived);
                 //char characterResponse = serverResponse.back();
                 if (serverResponse == "TipoA"){
+                    close(sock);
                     return 1;
                 }
                 if (serverResponse == "TipoB"){
+                    close(sock);
                     return 2;
                 }
                 if (serverResponse == "TipoC"){
+                    close(sock);
                     return 3;
                 }
                 if (serverResponse == "TipoD"){
+                    close(sock);
                     return 4;
                 }
                 if (serverResponse == "TipoE"){
+                    close(sock);
                     return 5;
                 }
                 //return serverResponse;
-
             }
-            break;
-        } while (true);
+        }
 
         //Close the socket
         close(sock);

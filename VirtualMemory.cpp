@@ -150,6 +150,14 @@ public:
 
     PagedArray(){
         this->matriz.createBoard();
+        this->shuffle();
+    }
+
+    string getCard(int cardNumber){
+        return findInMemory(cardNumber).tipo;
+    }
+
+    void shuffle(){
         this->t1 = this->matriz.produce_random_card();
         this->t2 = this->matriz.produce_random_card();
         this->t3 = this->matriz.produce_random_card();
@@ -160,10 +168,6 @@ public:
         this->t8 = this->matriz.produce_random_card();
         this->t9 = this->matriz.produce_random_card();
         this->t10 = this->matriz.produce_random_card();
-    }
-
-    string getCard(int cardNumber){
-        return findInMemory(cardNumber).tipo;
     }
 
     tarjeta findInMemory(int cardNumber){
