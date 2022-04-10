@@ -67,11 +67,35 @@ MainWindow::MainWindow(QWidget *parent)
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
         ui->pushButton_30->setIcon(
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(testSlot()));
+    connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(testSlot()));
     }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::testSlot()
+{
+    QObject *senderObj = sender(); // This will give Sender object
+    // This will give obejct name for above it will give "A", "B", "C"
+    QString senderObjName = senderObj->objectName();
+
+    if(senderObjName == "A")
+    {
+        //Implement Button A Specific
+    }
+    //Similarly for "B" and "C"
+    if(senderObjName == "B")
+    {
+        //Implement Button B Specific
+    }
+    if(senderObjName == "C")
+    {
+        //Implement Button C Specific
+    }
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -95,10 +119,11 @@ void MainWindow::on_pushButton_clicked()
         ui->pushButton->setIcon(
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoD.png"));
     }
-    if (newIcon == 5){
+    if (newIcon == 5) {
         ui->pushButton->setIcon(
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
     }
+    this->lastPressed = ui->pushButton;
 
 }
 

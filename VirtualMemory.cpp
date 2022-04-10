@@ -10,8 +10,10 @@ using namespace std;
 
 class MatrizPaginada{
     int matriz_nums[5][6];
-
 public:
+    vector<int> memoryCards;
+
+
     void createBoard(){
         int maxTypeA = 0;
         int maxTypeB = 0;
@@ -121,6 +123,20 @@ public:
         return 0;
     }
 
+    bool contains(const int & elem)
+    {
+        bool result = false;
+        for (auto & x : this->memoryCards)
+        {
+            if (x == elem)
+            {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
     tarjeta produce_random_card(){
         int i;
         int j;
@@ -128,10 +144,15 @@ public:
         i = rand() %4;
         j = rand() %5;
         tarjeta card = tarjeta(this->get_from_text(i,j), this->matriz_nums[i][j]);
+        /*
+        if(contains(card.num)){
+            return produce_random_card();
+        }else{
+            this->memoryCards.push_back(card.num);
+        }
+        */
         return card;
-
     }
-
 };
 
 class PagedArray {
@@ -158,6 +179,7 @@ public:
     }
 
     void shuffle(){
+        this->matriz.memoryCards.clear();
         this->t1 = this->matriz.produce_random_card();
         this->t2 = this->matriz.produce_random_card();
         this->t3 = this->matriz.produce_random_card();
@@ -244,15 +266,15 @@ public:
     }
 
     void reset(){
-        this->t1.cardIsntPlating();
-        this->t2.cardIsntPlating();
-        this->t3.cardIsntPlating();
-        this->t4.cardIsntPlating();
-        this->t5.cardIsntPlating();
-        this->t6.cardIsntPlating();
-        this->t7.cardIsntPlating();
-        this->t8.cardIsntPlating();
-        this->t9.cardIsntPlating();
-        this->t10.cardIsntPlating();
+        this->t1.cardIsntPlaying();
+        this->t2.cardIsntPlaying();
+        this->t3.cardIsntPlaying();
+        this->t4.cardIsntPlaying();
+        this->t5.cardIsntPlaying();
+        this->t6.cardIsntPlaying();
+        this->t7.cardIsntPlaying();
+        this->t8.cardIsntPlaying();
+        this->t9.cardIsntPlaying();
+        this->t10.cardIsntPlaying();
     }
 };
