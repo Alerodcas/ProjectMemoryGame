@@ -76,7 +76,9 @@ int startServer(PagedArray pagedArray){
         string received = string(buf, 0, bytesReceived);
         // Echo message back to client
         string imgType = pagedArray.getCard(stoi(received));
-        send(clientSocket, imgType.c_str(), imgType.size() + 1, 0);
+        string points = pagedArray.compareCards(imgType);
+        string response = imgType + " " + points + " ";
+        send(clientSocket, response.c_str(), response.size() + 1, 0);
     }
     /*
     while (bothCards == false) {

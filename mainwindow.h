@@ -14,9 +14,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QPushButton *lastPressed;
+    QPushButton *ghost;
+    QPushButton *lastPressed = this->ghost;
 
 private slots:
+    std::vector<std::string> getWords(std::string text);
+
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
@@ -79,8 +82,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
-    void testSlot();
 
 };
 #endif // MAINWINDOW_H

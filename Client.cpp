@@ -9,11 +9,13 @@ using namespace std;
 
 class Client {
 public:
-    int startClient(int num) {
+    string startClient(int num) {
+        string error = " ";
+        static int r[2];
         //Create socket
         int sock = socket(AF_INET, SOCK_STREAM, 0);
         if (sock == -1) {
-            return -1;
+            return error;
         }
         //Create a hint structure for the server we're connecting with
         int port = 54000;
@@ -27,7 +29,7 @@ public:
         //Connect to the server on the socket
         int connectRes = connect(sock, (sockaddr*)&hint, sizeof(hint));
         if (connectRes == -1) {
-            return -1;
+            return error;
         }
 
         char buf[4096];
@@ -48,33 +50,12 @@ public:
             } else {
                 //Display response
                 string serverResponse = string(buf, 0,bytesReceived);
-                //char characterResponse = serverResponse.back();
-                if (serverResponse == "TipoA"){
-                    close(sock);
-                    return 1;
-                }
-                if (serverResponse == "TipoB"){
-                    close(sock);
-                    return 2;
-                }
-                if (serverResponse == "TipoC"){
-                    close(sock);
-                    return 3;
-                }
-                if (serverResponse == "TipoD"){
-                    close(sock);
-                    return 4;
-                }
-                if (serverResponse == "TipoE"){
-                    close(sock);
-                    return 5;
-                }
-                //return serverResponse;
+                close(sock);
+                return serverResponse;
             }
         }
-
         //Close the socket
         close(sock);
-        return 0;
+        return "";
     }
 };

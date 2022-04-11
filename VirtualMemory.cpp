@@ -25,7 +25,6 @@ public:
         srand(time(NULL));
         vector<string> types = {"TipoA", "TipoB", "TipoC", "TipoD", "TipoE"};
         while (total > 0) {
-            int a = rand();
             string randomType = types[rand() % types.size()];
             if(randomType == "TipoA" and maxTypeA < 6){
                 board.push_back("TipoA");
@@ -158,6 +157,8 @@ public:
 class PagedArray {
 public:
     MatrizPaginada matriz;
+    int count;
+    string firstCard;
     tarjeta t1 = tarjeta("", 0);
     tarjeta t2 = tarjeta("", 0);
     tarjeta t3 = tarjeta("", 0);
@@ -172,10 +173,16 @@ public:
     PagedArray(){
         this->matriz.createBoard();
         this->shuffle();
+        count = 0;
     }
 
     string getCard(int cardNumber){
-        return findInMemory(cardNumber).tipo;
+        this->count++;
+        string cardType = findInMemory(cardNumber).tipo;
+        if (count%2 != 0){
+            this->firstCard = cardType;
+        }
+        return cardType;
     }
 
     void shuffle(){
@@ -252,14 +259,16 @@ public:
         }
     }
 
-    string compareCards(string card1, string card2){
-        if(card1 == card2){
-            if(card1 == "TipoA"){
-                return "5";
-            }if(card1 == "TipoB"){
-                return "3";
-            }else{
-                return "1";
+    string compareCards(string card2){
+        if (this->count%2 == 0){
+            if(this->firstCard == card2){
+                if(card2 == "TipoA"){
+                    return "5";
+                }if(card2 == "TipoB"){
+                    return "3";
+                }else{
+                    return "1";
+                }
             }
         }
         return "0";
