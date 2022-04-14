@@ -14,11 +14,17 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+public:
+    int points;
     QPushButton *ghost;
-    QPushButton *lastPressed = this->ghost;
+    QPushButton *firstPressed = this->ghost;
+    QPushButton *secondPressed = this->ghost;
 
 private slots:
     std::vector<std::string> getWords(std::string text);
+
+    //void evaluate(QPushButton button, std::vector<std::string> commands);
 
     void on_pushButton_clicked();
 
@@ -79,6 +85,8 @@ private slots:
     void on_pushButton_29_clicked();
 
     void on_pushButton_30_clicked();
+
+    void on_pushButton_31_clicked();
 
 private:
     Ui::MainWindow *ui;
