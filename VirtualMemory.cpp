@@ -144,7 +144,7 @@ public:
         j = rand() %5;
         tarjeta card = tarjeta(this->get_from_text(i,j), this->matriz_nums[i][j]);
         /*
-        if(contains(card.num)){
+        if(contains(this->matriz_nums[i][j])){
             return produce_random_card();
         }else{
             this->memoryCards.push_back(card.num);
@@ -159,6 +159,7 @@ public:
     MatrizPaginada matriz;
     int count;
     string firstCard;
+    bool bothInMemory;
     tarjeta t1 = tarjeta("", 0);
     tarjeta t2 = tarjeta("", 0);
     tarjeta t3 = tarjeta("", 0);
@@ -171,6 +172,7 @@ public:
     tarjeta t10 = tarjeta("", 0);
 
     PagedArray(){
+        this->bothInMemory = true;
         this->matriz.createBoard();
         this->shuffle();
         count = 0;
@@ -248,6 +250,7 @@ public:
         int location_i = this->matriz.getCardLocation(cardNumber, true);
         int location_j = this->matriz.getCardLocation(cardNumber, false);
         string newCardType = this->matriz.get_from_text(location_i, location_j);
+        this->bothInMemory = false;
         if(this->t1.playing == false){
             this->t1 = tarjeta(newCardType, cardNumber);
             this->t1.cardIsPlaying();
@@ -260,18 +263,26 @@ public:
     }
 
     string compareCards(string card2){
+        int points = 0;
         if (this->count%2 == 0){
-            if(this->firstCard == card2){
-                if(card2 == "TipoA"){
-                    return "5";
-                }if(card2 == "TipoB"){
-                    return "3";
-                }else{
-                    return "1";
+            if(this->firstCard == card2) {
+                if (card2 == "TipoA") {
+                    points += 5;
                 }
+                if (card2 == "TipoD") {
+                    points += 3;
+                } else if (card2 != "TipoA" and card2 != "TipoD") {
+                    points += 1;
+                }
+
+                if (this->bothInMemory) {
+                    points += 5;
+                }
+                this->shuffle();
             }
         }
-        return "0";
+        this->bothInMemory = true;
+        return to_string(points);
     }
 
     void reset(){

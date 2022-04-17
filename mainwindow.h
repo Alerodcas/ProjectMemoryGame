@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QPushButton>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,8 +16,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public:
     int points;
+    bool playingPlayer = true;
+    int playerOnePoints = 0;
+    int playerTwoPoints = 0;
     QPushButton *ghost;
     QPushButton *firstPressed = this->ghost;
     QPushButton *secondPressed = this->ghost;
@@ -24,7 +27,7 @@ public:
 private slots:
     std::vector<std::string> getWords(std::string text);
 
-    //void evaluate(QPushButton button, std::vector<std::string> commands);
+    void getUsedMemory();
 
     void on_pushButton_clicked();
 

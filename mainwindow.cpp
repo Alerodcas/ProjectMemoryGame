@@ -68,6 +68,9 @@ MainWindow::MainWindow(QWidget *parent)
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
         ui->pushButton_30->setIcon(
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+        ui->label_2->setText(QString::number(this->playerOnePoints));
+        ui->label_4->setText(QString::number(this->playerTwoPoints));
+        ui->label_6->setText("Player 1");
     }
 
 MainWindow::~MainWindow()
@@ -94,27 +97,15 @@ vector<string> MainWindow::getWords(string text) {
     return words;
 }
 
-/*
-void MainWindow::evaluate(QPushButton button, vector<string> commands){
-    if(commands[1] != "0"){
-        button.setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
-        if(this->lastPressed != this->ghost) {
-            this->lastPressed->setIcon(
-                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
-        }
-        this->lastPressed = this->ghost;
-    }else{
-        button.setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        if(this->lastPressed != this->ghost) {
-            this->lastPressed->setIcon(
-                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        }
-        this->lastPressed = ui->pushButton;
-    }
+void MainWindow::getUsedMemory(){
+    int id = getpid();
+    string string("pmap ");
+    string.append(to_string(id));
+    string.append(" | tail -n 1 | awk '/[0-9]K/{print $2}'");
+    char const *pchar = string.c_str();
+    cout << id << endl;
+    cout << system(pchar) << endl;
 }
- */
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -1178,7 +1169,7 @@ void MainWindow::on_pushButton_31_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
             this->firstPressed->setEnabled(false);
             this->secondPressed->setEnabled(false);
-        }else{
+        }else {
             this->firstPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
             this->secondPressed->setIcon(
@@ -1187,6 +1178,17 @@ void MainWindow::on_pushButton_31_clicked()
         this->firstPressed = this->ghost;
         this->secondPressed = this->ghost;
     }
-
+    if(this->playingPlayer){
+        this->playerOnePoints += this->points;
+        this->playingPlayer = false;
+        ui->label_6->setText("Player 2");
+    }else{
+        this->playerTwoPoints += this->points;
+        this->playingPlayer = true;
+        ui->label_6->setText("Player 1");
+    }
+    ui->label_2->setText(QString::number(this->playerOnePoints));
+    ui->label_4->setText(QString::number(this->playerTwoPoints));
+    this->getUsedMemory();
 }
 

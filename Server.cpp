@@ -80,26 +80,6 @@ int startServer(PagedArray pagedArray){
         string response = imgType + " " + points + " ";
         send(clientSocket, response.c_str(), response.size() + 1, 0);
     }
-    /*
-    while (bothCards == false) {
-        if (card1 == "") {
-            card1 = imgType;
-            break;
-        } else {
-            card2 = imgType;
-            //verificar si son iguales
-            bothCards = true;
-        }
-    }
-
-    if(bothCards){
-        string points = pagedArray.compareCards(card1, card2);
-        send(clientSocket, points.c_str(), points.size() + 1, 0);
-        pagedArray.reset();
-        card1 = "";
-        card2 = "";
-    }
-     */
 
     // Close the socket
     close(clientSocket);
