@@ -158,6 +158,7 @@ class PagedArray {
 public:
     MatrizPaginada matriz;
     int count;
+    int playedCads;
     string firstCard;
     bool bothInMemory;
     tarjeta t1 = tarjeta("", 0);
@@ -175,6 +176,7 @@ public:
         this->bothInMemory = true;
         this->matriz.createBoard();
         this->shuffle();
+        this->playedCads = 0;
         count = 0;
     }
 
@@ -279,7 +281,11 @@ public:
                     points += 5;
                 }
                 this->shuffle();
+                this->playedCads += 2;
             }
+        }
+        if(this->playedCads == 30){
+            return "-" + to_string(points);
         }
         this->bothInMemory = true;
         return to_string(points);

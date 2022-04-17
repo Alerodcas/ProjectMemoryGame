@@ -2,6 +2,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "Client.cpp"
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
