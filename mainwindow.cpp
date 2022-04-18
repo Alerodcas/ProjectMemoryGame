@@ -2,16 +2,17 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "Client.cpp"
-#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <iostream>
+#include <random>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->frame->hide();
         ui->pushButton->setIcon(
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
         ui->pushButton_2->setIcon(
@@ -74,7 +75,6 @@ MainWindow::MainWindow(QWidget *parent)
                 QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
         ui->label_2->setText(QString::number(this->playerOnePoints));
         ui->label_4->setText(QString::number(this->playerTwoPoints));
-        ui->label_6->setText("Player 1");
     }
 
 MainWindow::~MainWindow()
@@ -1165,15 +1165,15 @@ void MainWindow::on_pushButton_30_clicked()
 
 void MainWindow::on_pushButton_31_clicked()
 {
-    if(this->secondPressed != this->ghost){
-        if(this->points != 0){
+    if(this->secondPressed != this->ghost) {
+        if (this->points != 0) {
             this->firstPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
             this->secondPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
             this->firstPressed->setEnabled(false);
             this->secondPressed->setEnabled(false);
-        }else {
+        } else {
             this->firstPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
             this->secondPressed->setIcon(
@@ -1181,18 +1181,39 @@ void MainWindow::on_pushButton_31_clicked()
         }
         this->firstPressed = this->ghost;
         this->secondPressed = this->ghost;
-    }
-    if(this->playingPlayer){
-        this->playerOnePoints += this->points;
-        this->playingPlayer = false;
-        ui->label_6->setText("Player 2");
-    }else{
-        this->playerTwoPoints += this->points;
-        this->playingPlayer = true;
-        ui->label_6->setText("Player 1");
+
+        if (this->playingPlayer) {
+            this->playerOnePoints += this->points;
+            this->playingPlayer = false;
+            ui->label_6->setText(this->playerTwo);
+        } else {
+            this->playerTwoPoints += this->points;
+            this->playingPlayer = true;
+            ui->label_6->setText(this->playerOne);
+        }
     }
     ui->label_2->setText(QString::number(this->playerOnePoints));
     ui->label_4->setText(QString::number(this->playerTwoPoints));
     this->getUsedMemory();
+}
+
+
+void MainWindow::on_pushButton_32_clicked()
+{
+    QString Player1Name = ui->plainTextEdit->toPlainText();
+    QString Player2Name = ui->plainTextEdit_2->toPlainText();
+    ui->label->setText(Player1Name);
+    ui->label_3->setText(Player2Name);
+    this->playerOne = Player1Name;
+    this->playerTwo = Player2Name;
+    auto gen = std::bind(std::uniform_int_distribution<>(0,1),std::default_random_engine());
+    this->playingPlayer = gen();
+    if (this->playingPlayer) {
+        ui->label_6->setText(this->playerOne);
+    } else {
+        ui->label_6->setText(this->playerTwo);
+    }
+    ui->frame_2->hide();
+    ui->frame->show();
 }
 

@@ -20,6 +20,8 @@ public:
     bool playingPlayer = true;
     int playerOnePoints = 0;
     int playerTwoPoints = 0;
+    QString playerOne;
+    QString playerTwo;
     QPushButton *ghost;
     QPushButton *firstPressed = this->ghost;
     QPushButton *secondPressed = this->ghost;
@@ -90,6 +92,8 @@ private slots:
     void on_pushButton_30_clicked();
 
     void on_pushButton_31_clicked();
+
+    void on_pushButton_32_clicked();
 
 private:
     Ui::MainWindow *ui;
