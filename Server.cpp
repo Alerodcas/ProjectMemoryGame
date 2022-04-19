@@ -9,6 +9,9 @@
 
 using namespace std;
 
+/**
+ * Imprime en la terminal la memoria que esta usando el servidor
+ */
 void getUsedMemory(){
     int id = getpid();
     string string("pmap ");
@@ -19,6 +22,11 @@ void getUsedMemory(){
     cout << system(pchar) << endl;
 }
 
+/**
+ * Inicia al servidor
+ * @param pagedArray Recibe el Paged Array utilizado para jugar
+ * @return
+ */
 int startServer(PagedArray pagedArray){
     // Create a socket
     while(true) {

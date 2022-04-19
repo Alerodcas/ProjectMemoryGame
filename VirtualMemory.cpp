@@ -5,59 +5,78 @@
 #include <fstream>
 #include <cstdlib>
 #include <Tarjeta.cpp>
+#include <list>
 
 using namespace std;
 
 class MatrizPaginada{
     int matriz_nums[5][6];
 public:
-    vector<int> memoryCards;
+    list<int> memoryCards;
 
-
+    /**
+     * Crea un vector con un orden aleatorio de la tarjetas
+     */
     void createBoard(){
         int maxTypeA = 0;
         int maxTypeB = 0;
         int maxTypeC = 0;
         int maxTypeD = 0;
         int maxTypeE = 0;
+        int maxTypeF = 0;
+        int maxTypeG = 0;
         int total = 30;
         vector<string> board;
         srand(time(NULL));
-        vector<string> types = {"TipoA", "TipoB", "TipoC", "TipoD", "TipoE"};
+        vector<string> types = {"TipoA", "TipoB", "TipoC", "TipoD", "TipoE", "TipoF", "TipoG"};
         while (total > 0) {
             string randomType = types[rand() % types.size()];
-            if(randomType == "TipoA" and maxTypeA < 6){
+            if (randomType == "TipoA" and maxTypeA < 2) {
                 board.push_back("TipoA");
-                maxTypeA +=1;
+                maxTypeA += 1;
                 total -= 1;
             }
-            if(randomType == "TipoB" and maxTypeB < 6){
+            if (randomType == "TipoB" and maxTypeB < 6) {
                 board.push_back("TipoB");
-                maxTypeB +=1;
+                maxTypeB += 1;
                 total -= 1;
             }
-            if(randomType == "TipoC" and maxTypeC < 6){
+            if (randomType == "TipoC" and maxTypeC < 4) {
                 board.push_back("TipoC");
-                maxTypeC +=1;
+                maxTypeC += 1;
                 total -= 1;
             }
-            if(randomType == "TipoD" and maxTypeD < 6){
+            if (randomType == "TipoD" and maxTypeD < 4) {
                 board.push_back("TipoD");
-                maxTypeD +=1;
+                maxTypeD += 1;
                 total -= 1;
             }
-            if(randomType == "TipoE" and maxTypeE < 6){
+            if (randomType == "TipoE" and maxTypeE < 4) {
                 board.push_back("TipoE");
-                maxTypeE +=1;
+                maxTypeE += 1;
                 total -= 1;
-            }else{
+            }
+            if (randomType == "TipoF" and maxTypeF < 4) {
+                board.push_back("TipoF");
+                maxTypeF += 1;
+                total -= 1;
+            }
+            if (randomType == "TipoG" and maxTypeG < 6) {
+                board.push_back("TipoG");
+                maxTypeG += 1;
+                total -= 1;
+            }else {
                 continue;
             }
+
         }
         write_in_matrix();
         write_in_text(board);
     }
 
+    /**
+     * Crea una matriz donde para simular los numeros de tarjeta dependiendo de su ubicacion
+     */
     void write_in_matrix(){
         int count = 1;
         for(int i=0; i<5; i++){
@@ -68,6 +87,10 @@ public:
         }
     }
 
+    /**
+     * Escribe cada palabra del vector que recibe en un txt en forma de la matriz de juego
+     * @param tipos el vector de createBoard()
+     */
     void write_in_text(vector<string> tipos) {
         int count = 0;
         ofstream file_;
@@ -86,6 +109,12 @@ public:
         file_.close();
     }
 
+    /**
+     * Encuentra en la matriz del txt el tipo de carta que recibe
+     * @param i fila en la que esta la carta
+     * @param j columna en la que esta la carta
+     * @return
+     */
     string get_from_text(int i, int j){
         string word, line;
         int selectline = i + 1;
@@ -107,6 +136,12 @@ public:
         return word;
     }
 
+    /**
+     * Retorna en la fila y columna en la que esta la carta que se busca
+     * @param cardNumber numero de carta
+     * @param firstOrSecond true para obtener la fila y false la columna
+     * @return
+     */
     int getCardLocation(int cardNumber, bool firstOrSecond) {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
@@ -122,13 +157,16 @@ public:
         return 0;
     }
 
-    bool contains(const int & elem)
+    /**
+     * encuentra si hay un numero en la lista
+     * @param elem numero que tiene que buscar
+     * @return true si se encuentra en la lista y false de lo contrario
+     */
+    bool contains(int elem)
     {
         bool result = false;
-        for (auto & x : this->memoryCards)
-        {
-            if (x == elem)
-            {
+        for(list<int>::iterator i=this->memoryCards.begin(); i!=this->memoryCards.end(); i++){
+            if(elem == *i){
                 result = true;
                 break;
             }
@@ -136,6 +174,10 @@ public:
         return result;
     }
 
+    /**
+     * Crea un puntero a una carta aleatorio
+     * @return retorna el puntero
+     */
     tarjeta * produce_random_card(){
         int i;
         int j;
@@ -149,7 +191,7 @@ public:
         }else{
             this->memoryCards.push_back(card->num);
         }
-        */
+         */
         return card;
     }
 };
@@ -182,6 +224,11 @@ public:
         this->count = 0;
     }
 
+    /**
+     * Mantiene la cuenta de cuantas carta se han volteado y llama la funcion para otener la carta que pide el servidor
+     * @param cardNumber numero de la carta que se busca
+     * @return el tipo de la carta que se busca
+     */
     string getCard(int cardNumber){
         this->count++;
         string cardType = findInMemory(cardNumber)->tipo;
@@ -191,6 +238,9 @@ public:
         return cardType;
     }
 
+    /**
+     * le asigna a los punteros las cartas aleatorias que se crean
+     */
     void shuffle(){
         this->matriz.memoryCards.clear();
         this->t1 = this->matriz.produce_random_card();
@@ -209,6 +259,11 @@ public:
         }
     }
 
+    /**
+     * Si la tarjeta que se busca esta en memoria retorna esta, de lo contrario llama la funcion que la busca en el txt
+     * @param cardNumber numero de carta que se busca
+     * @return retorna un puntero a la carta que se busca
+     */
     tarjeta * findInMemory(int cardNumber) {
         if (this->t1->num == cardNumber) {
             this->t1->cardIsPlaying();
@@ -267,6 +322,11 @@ public:
         return this->getNeededCard(cardNumber);
     }
 
+    /**
+     * Si la tarjeta no estaba en memoria este la busca en el txt
+     * @param cardNumber numero de la tarjeta que se busca
+     * @return retorna el puntero a la carta que se busca
+     */
     tarjeta * getNeededCard(int cardNumber){
         int location_i = this->matriz.getCardLocation(cardNumber, true);
         int location_j = this->matriz.getCardLocation(cardNumber, false);
@@ -284,16 +344,27 @@ public:
         }
     }
 
+    /**
+     * Compara la ultima carta que se volteo con la nueva
+     * @param card2 carta que se acaba de voltear
+     * @return retorna la cantidad de puntos obtenidos, los page hits y page fault en un string
+     */
     string compareCards(string card2){
         int points = 0;
         if (this->count%2 == 0){
             if(this->firstCard == card2) {
                 if (card2 == "TipoA") {
-                    points += 3;
+                    points += 5;
                 }
                 if (card2 == "TipoD") {
+                    points += 4;
+                }
+                if (card2 == "TipoC") {
+                    points += 3;
+                }
+                if (card2 == "TipoE") {
                     points += 2;
-                } else if (card2 != "TipoA" and card2 != "TipoD") {
+                }else if (card2 == "TipoB" or card2 == "TipoF" or card2 == "TipoG") {
                     points += 1;
                 }
                 if (this->bothInMemory) {
@@ -331,6 +402,9 @@ public:
         return to_string(points) + " " + to_string(this->pageHit)+ " " + to_string(this->pageFault);
     }
 
+    /**
+     * Vuelve a poner todas las tarjetas de forma jugable
+     */
     void reset() {
         this->t1->cardIsntPlaying();
         this->t2->cardIsntPlaying();

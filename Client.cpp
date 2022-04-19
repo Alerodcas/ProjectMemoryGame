@@ -9,9 +9,13 @@ using namespace std;
 
 class Client {
 public:
+    /**
+     * Funcion para iniciar la clase cleinte
+     * @param num recibe el numero de tarjeta del boton que se presiono
+     * @return retorna un string con el tipo de tarjeta, puntaje, page hits y page
+     */
     string startClient(int num) {
         string error = " ";
-        static int r[2];
         //Create socket
         int sock = socket(AF_INET, SOCK_STREAM, 0);
         if (sock == -1) {

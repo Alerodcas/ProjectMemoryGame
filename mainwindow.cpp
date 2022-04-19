@@ -83,6 +83,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * Separa cada palabra en un string
+ * @param text Recibe el string con todas las palabras
+ * @return retorna un vector que contiene cada palabra
+ */
 vector<string> MainWindow::getWords(string text) {
     string word = "";
     vector<string> words;
@@ -102,6 +107,9 @@ vector<string> MainWindow::getWords(string text) {
     return words;
 }
 
+/**
+ * Mismo para cada boton, inicia el cliente, cambia su icono de acuerdo con lo recibido
+ */
 void MainWindow::on_pushButton_clicked()
 {
     if(this->OnlyTwoCards) {
@@ -128,6 +136,14 @@ void MainWindow::on_pushButton_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
 
         this->points = stoi(commands[1]);
@@ -170,6 +186,14 @@ void MainWindow::on_pushButton_2_clicked()
             ui->pushButton_2->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_2->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_2->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -211,6 +235,14 @@ void MainWindow::on_pushButton_3_clicked()
             ui->pushButton_3->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_3->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_3->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -250,6 +282,14 @@ void MainWindow::on_pushButton_4_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_4->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_4->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_4->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -291,6 +331,14 @@ void MainWindow::on_pushButton_5_clicked()
             ui->pushButton_5->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_5->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_5->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -330,6 +378,14 @@ void MainWindow::on_pushButton_6_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_6->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_6->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_6->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -371,6 +427,14 @@ void MainWindow::on_pushButton_7_clicked()
             ui->pushButton_7->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_7->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_7->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -410,6 +474,14 @@ void MainWindow::on_pushButton_8_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_8->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_8->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_8->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -451,6 +523,14 @@ void MainWindow::on_pushButton_9_clicked()
             ui->pushButton_9->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_9->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_9->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -490,6 +570,14 @@ void MainWindow::on_pushButton_10_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_10->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_10->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_10->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -531,6 +619,14 @@ void MainWindow::on_pushButton_11_clicked()
             ui->pushButton_11->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_11->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_11->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -570,6 +666,14 @@ void MainWindow::on_pushButton_12_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_12->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_12->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_12->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -611,6 +715,14 @@ void MainWindow::on_pushButton_13_clicked()
             ui->pushButton_13->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_13->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_13->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -650,6 +762,14 @@ void MainWindow::on_pushButton_14_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_14->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_14->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_14->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -691,6 +811,14 @@ void MainWindow::on_pushButton_15_clicked()
             ui->pushButton_15->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_15->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_15->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -730,6 +858,14 @@ void MainWindow::on_pushButton_16_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_16->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_16->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_16->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -771,6 +907,14 @@ void MainWindow::on_pushButton_17_clicked()
             ui->pushButton_17->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_17->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_17->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -810,6 +954,14 @@ void MainWindow::on_pushButton_18_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_18->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_18->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_18->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -851,6 +1003,14 @@ void MainWindow::on_pushButton_19_clicked()
             ui->pushButton_19->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_19->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_19->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -890,6 +1050,14 @@ void MainWindow::on_pushButton_20_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_20->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_20->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_20->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -931,6 +1099,14 @@ void MainWindow::on_pushButton_21_clicked()
             ui->pushButton_21->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_21->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_21->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -970,6 +1146,14 @@ void MainWindow::on_pushButton_22_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_22->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_22->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_22->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -1011,6 +1195,14 @@ void MainWindow::on_pushButton_23_clicked()
             ui->pushButton_23->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_23->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_23->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -1050,6 +1242,14 @@ void MainWindow::on_pushButton_24_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_24->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_24->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_24->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -1091,6 +1291,14 @@ void MainWindow::on_pushButton_25_clicked()
             ui->pushButton_25->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_25->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_25->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -1130,6 +1338,14 @@ void MainWindow::on_pushButton_26_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_26->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_26->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_26->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -1171,6 +1387,14 @@ void MainWindow::on_pushButton_27_clicked()
             ui->pushButton_27->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_27->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_27->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -1210,6 +1434,14 @@ void MainWindow::on_pushButton_28_clicked()
         if (commands[0] == "TipoE") {
             ui->pushButton_28->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
+        }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_28->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_28->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
         }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
@@ -1251,6 +1483,14 @@ void MainWindow::on_pushButton_29_clicked()
             ui->pushButton_29->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_29->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_29->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -1291,6 +1531,14 @@ void MainWindow::on_pushButton_30_clicked()
             ui->pushButton_30->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
+        if (commands[0] == "TipoF") {
+            ui->pushButton_30->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoF.png"));
+        }
+        if (commands[0] == "TipoG") {
+            ui->pushButton_30->setIcon(
+                    QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoG.png"));
+        }
         this->points = stoi(commands[1]);
         ui->label_16->setText(QString::fromStdString(commands[2]));
         ui->label_17->setText(QString::fromStdString(commands[3]));
@@ -1304,6 +1552,9 @@ void MainWindow::on_pushButton_30_clicked()
     }
 }
 
+/**
+ * Evalua los dos ultimos botones presinados y cambia el icono acorde como dice el juego
+ */
 void MainWindow::on_pushButton_31_clicked()
 {
     if(this->secondPressed != this->ghost) {
@@ -1353,7 +1604,9 @@ void MainWindow::on_pushButton_31_clicked()
     ui->label_4->setText(QString::number(this->playerTwoPoints));
 }
 
-
+/**
+ * Para iniciar a jugar, recibe el nombre de los jugadores y los coloca en sus respectivos labels
+ */
 void MainWindow::on_pushButton_32_clicked()
 {
     QString Player1Name = ui->plainTextEdit->toPlainText();

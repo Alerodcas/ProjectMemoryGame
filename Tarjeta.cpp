@@ -17,10 +17,16 @@ public:
         this->playing = false;
     }
 
+    /**
+     * Para saber cuando una carta fue escogida por el jugador
+     */
     void cardIsPlaying(){
         this->playing = true;
     }
 
+    /**
+     * Para desactivar que la carta esta siendo utilizada
+     */
     void cardIsntPlaying(){
         this->playing = false;
     }
