@@ -18,6 +18,7 @@ public:
 
     int points;
     bool playingPlayer;
+    bool OnlyTwoCards= true;
     int playerOnePoints = 0;
     int playerTwoPoints = 0;
     QString playerOne;
