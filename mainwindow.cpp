@@ -1565,15 +1565,6 @@ void MainWindow::on_pushButton_31_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
             this->firstPressed->setEnabled(false);
             this->secondPressed->setEnabled(false);
-            if (this->playingPlayer) {
-                this->playerOnePoints += this->points;
-                this->playingPlayer = false;
-                ui->label_6->setText(this->playerTwo);
-            }else {
-                this->playerTwoPoints += this->points;
-                this->playingPlayer = true;
-                ui->label_6->setText(this->playerOne);
-            }
         } else if(this->points == 0){
             this->firstPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
@@ -1595,6 +1586,15 @@ void MainWindow::on_pushButton_31_clicked()
             }
             ui->frame->hide();
             ui->frame_3->show();
+        }
+        if (this->playingPlayer) {
+            this->playerOnePoints += this->points;
+            this->playingPlayer = false;
+            ui->label_6->setText(this->playerTwo);
+        }else {
+            this->playerTwoPoints += this->points;
+            this->playingPlayer = true;
+            ui->label_6->setText(this->playerOne);
         }
         this->firstPressed = this->ghost;
         this->secondPressed = this->ghost;
