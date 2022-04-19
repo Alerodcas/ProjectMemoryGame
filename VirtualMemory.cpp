@@ -136,18 +136,18 @@ public:
         return result;
     }
 
-    tarjeta produce_random_card(){
+    tarjeta * produce_random_card(){
         int i;
         int j;
         srand(time(NULL));
         i = rand() %4;
         j = rand() %5;
-        tarjeta card = tarjeta(this->get_from_text(i,j), this->matriz_nums[i][j]);
+        tarjeta *card = new tarjeta(this->get_from_text(i,j), this->matriz_nums[i][j]);
         /*
         if(contains(this->matriz_nums[i][j])){
             return produce_random_card();
         }else{
-            this->memoryCards.push_back(card.num);
+            this->memoryCards.push_back(card->num);
         }
         */
         return card;
@@ -158,31 +158,31 @@ class PagedArray {
 public:
     MatrizPaginada matriz;
     int count;
-    int playedCads;
+    int playedCards;
     string firstCard;
     bool bothInMemory;
-    tarjeta t1 = tarjeta("", 0);
-    tarjeta t2 = tarjeta("", 0);
-    tarjeta t3 = tarjeta("", 0);
-    tarjeta t4 = tarjeta("", 0);
-    tarjeta t5 = tarjeta("", 0);
-    tarjeta t6 = tarjeta("", 0);
-    tarjeta t7 = tarjeta("", 0);
-    tarjeta t8 = tarjeta("", 0);
-    tarjeta t9 = tarjeta("", 0);
-    tarjeta t10 = tarjeta("", 0);
+    tarjeta *t1;
+    tarjeta *t2;
+    tarjeta *t3;
+    tarjeta *t4;
+    tarjeta *t5;
+    tarjeta *t6;
+    tarjeta *t7;
+    tarjeta *t8;
+    tarjeta *t9;
+    tarjeta *t10;
 
     PagedArray(){
         this->bothInMemory = true;
         this->matriz.createBoard();
+        this->playedCards = 0;
         this->shuffle();
-        this->playedCads = 0;
-        count = 0;
+        this->count = 0;
     }
 
     string getCard(int cardNumber){
         this->count++;
-        string cardType = findInMemory(cardNumber).tipo;
+        string cardType = findInMemory(cardNumber)->tipo;
         if (count%2 != 0){
             this->firstCard = cardType;
         }
@@ -193,73 +193,80 @@ public:
         this->matriz.memoryCards.clear();
         this->t1 = this->matriz.produce_random_card();
         this->t2 = this->matriz.produce_random_card();
-        this->t3 = this->matriz.produce_random_card();
-        this->t4 = this->matriz.produce_random_card();
-        this->t5 = this->matriz.produce_random_card();
-        this->t6 = this->matriz.produce_random_card();
-        this->t7 = this->matriz.produce_random_card();
-        this->t8 = this->matriz.produce_random_card();
-        this->t9 = this->matriz.produce_random_card();
-        this->t10 = this->matriz.produce_random_card();
+        if(this->playedCards < 20) {
+            this->t3 = this->matriz.produce_random_card();
+            this->t4 = this->matriz.produce_random_card();
+            this->t5 = this->matriz.produce_random_card();
+            this->t6 = this->matriz.produce_random_card();
+            if (this->playedCards < 10) {
+                this->t7 = this->matriz.produce_random_card();
+                this->t8 = this->matriz.produce_random_card();
+                this->t9 = this->matriz.produce_random_card();
+                this->t10 = this->matriz.produce_random_card();
+            }
+        }
     }
 
-    tarjeta findInMemory(int cardNumber){
-        if(this->t1.num == cardNumber){
-            this->t1.cardIsPlaying();
+    tarjeta * findInMemory(int cardNumber) {
+        if (this->t1->num == cardNumber) {
+            this->t1->cardIsPlaying();
             return t1;
         }
-        if(this->t2.num == cardNumber){
-            this->t2.cardIsPlaying();
+        if (this->t2->num == cardNumber) {
+            this->t2->cardIsPlaying();
             return t2;
         }
-        if(this->t3.num == cardNumber){
-            this->t3.cardIsPlaying();
-            return t3;
+        if (this->playedCards < 20) {
+            if (this->t3->num == cardNumber) {
+                this->t3->cardIsPlaying();
+                return t3;
+            }
+            if (this->t4->num == cardNumber) {
+                this->t4->cardIsPlaying();
+                return t4;
+            }
+            if (this->t5->num == cardNumber) {
+                this->t5->cardIsPlaying();
+                return t5;
+            }
+            if (this->t6->num == cardNumber) {
+                this->t6->cardIsPlaying();
+                return t6;
+            }
+            if (this->playedCards < 10) {
+                if (this->t7->num == cardNumber) {
+                    this->t7->cardIsPlaying();
+                    return t7;
+                }
+                if (this->t8->num == cardNumber) {
+                    this->t8->cardIsPlaying();
+                    return t8;
+                }
+                if (this->t9->num == cardNumber) {
+                    this->t9->cardIsPlaying();
+                    return t9;
+                }
+                if (this->t10->num == cardNumber) {
+                    this->t10->cardIsPlaying();
+                    return t10;
+                }
+            }
         }
-        if(this->t4.num == cardNumber){
-            this->t4.cardIsPlaying();
-            return t4;
-        }
-        if(this->t5.num == cardNumber){
-            this->t5.cardIsPlaying();
-            return t5;
-        }
-        if(this->t6.num == cardNumber){
-            this->t6.cardIsPlaying();
-            return t6;
-        }
-        if(this->t7.num == cardNumber){
-            this->t7.cardIsPlaying();
-            return t7;
-        }
-        if(this->t8.num == cardNumber){
-            this->t8.cardIsPlaying();
-            return t8;
-        }
-        if(this->t9.num == cardNumber){
-            this->t9.cardIsPlaying();
-            return t9;
-        }
-        if(this->t10.num == cardNumber){
-            this->t10.cardIsPlaying();
-            return t10;
-        }else{
-            return this->getNeededCard(cardNumber);
-        }
+        return this->getNeededCard(cardNumber);
     }
 
-    tarjeta getNeededCard(int cardNumber){
+    tarjeta * getNeededCard(int cardNumber){
         int location_i = this->matriz.getCardLocation(cardNumber, true);
         int location_j = this->matriz.getCardLocation(cardNumber, false);
         string newCardType = this->matriz.get_from_text(location_i, location_j);
         this->bothInMemory = false;
-        if(this->t1.playing == false){
-            this->t1 = tarjeta(newCardType, cardNumber);
-            this->t1.cardIsPlaying();
+        if(this->t1->playing == false){
+            this->t1 = new tarjeta(newCardType, cardNumber);
+            this->t1->cardIsPlaying();
             return t1;
         }else{
-            this->t2 = tarjeta(newCardType, cardNumber);
-            this->t2.cardIsPlaying();
+            this->t2 = new tarjeta(newCardType, cardNumber);
+            this->t2->cardIsPlaying();
             return t2;
         }
     }
@@ -280,26 +287,51 @@ public:
                     points += 5;
                 }
                 this->shuffle();
-                this->playedCads += 2;
+                this->playedCards += 2;
             }
+            this->reset();
         }
-        if(this->playedCads == 30){
+        if(this->playedCards == 10){
+            delete this->t10;
+            this->t10 = NULL;
+            delete this->t9;
+            this->t9 = NULL;
+            delete this->t8;
+            this->t8 = NULL;
+            delete this->t7;
+            this->t7 = NULL;
+        }
+        if(this->playedCards == 20){
+            delete this->t6;
+            this->t6 = NULL;
+            delete this->t5;
+            this->t5 = NULL;
+            delete this->t4;
+            this->t4 = NULL;
+            delete this->t3;
+            this->t3 = NULL;
+        }
+        if(this->playedCards == 30){
             return "-" + to_string(points);
         }
         this->bothInMemory = true;
         return to_string(points);
     }
 
-    void reset(){
-        this->t1.cardIsntPlaying();
-        this->t2.cardIsntPlaying();
-        this->t3.cardIsntPlaying();
-        this->t4.cardIsntPlaying();
-        this->t5.cardIsntPlaying();
-        this->t6.cardIsntPlaying();
-        this->t7.cardIsntPlaying();
-        this->t8.cardIsntPlaying();
-        this->t9.cardIsntPlaying();
-        this->t10.cardIsntPlaying();
+    void reset() {
+        this->t1->cardIsntPlaying();
+        this->t2->cardIsntPlaying();
+        if (this->playedCards < 20) {
+            this->t3->cardIsntPlaying();
+            this->t4->cardIsntPlaying();
+            this->t5->cardIsntPlaying();
+            this->t6->cardIsntPlaying();
+            if (this->playedCards < 10) {
+                this->t7->cardIsntPlaying();
+                this->t8->cardIsntPlaying();
+                this->t9->cardIsntPlaying();
+                this->t10->cardIsntPlaying();
+            }
+        }
     }
 };

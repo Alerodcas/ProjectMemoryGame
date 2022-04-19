@@ -65,9 +65,6 @@ int startServer(PagedArray pagedArray){
 
         // While loop: accept and echo message back to client
         char buf[4096];
-        string card1;
-        string card2;
-        bool bothCards = false;
 
         while (true) {
             memset(buf, 0, 4096);
