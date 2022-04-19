@@ -159,6 +159,8 @@ public:
     MatrizPaginada matriz;
     int count;
     int playedCards;
+    int pageHit;
+    int pageFault;
     string firstCard;
     bool bothInMemory;
     tarjeta *t1;
@@ -210,44 +212,54 @@ public:
     tarjeta * findInMemory(int cardNumber) {
         if (this->t1->num == cardNumber) {
             this->t1->cardIsPlaying();
+            this->pageHit += 1;
             return t1;
         }
         if (this->t2->num == cardNumber) {
             this->t2->cardIsPlaying();
+            this->pageHit += 1;
             return t2;
         }
         if (this->playedCards < 20) {
             if (this->t3->num == cardNumber) {
                 this->t3->cardIsPlaying();
+                this->pageHit += 1;
                 return t3;
             }
             if (this->t4->num == cardNumber) {
                 this->t4->cardIsPlaying();
+                this->pageHit += 1;
                 return t4;
             }
             if (this->t5->num == cardNumber) {
                 this->t5->cardIsPlaying();
+                this->pageHit += 1;
                 return t5;
             }
             if (this->t6->num == cardNumber) {
                 this->t6->cardIsPlaying();
+                this->pageHit += 1;
                 return t6;
             }
             if (this->playedCards < 10) {
                 if (this->t7->num == cardNumber) {
                     this->t7->cardIsPlaying();
+                    this->pageHit += 1;
                     return t7;
                 }
                 if (this->t8->num == cardNumber) {
                     this->t8->cardIsPlaying();
+                    this->pageHit += 1;
                     return t8;
                 }
                 if (this->t9->num == cardNumber) {
                     this->t9->cardIsPlaying();
+                    this->pageHit += 1;
                     return t9;
                 }
                 if (this->t10->num == cardNumber) {
                     this->t10->cardIsPlaying();
+                    this->pageHit += 1;
                     return t10;
                 }
             }
@@ -260,6 +272,7 @@ public:
         int location_j = this->matriz.getCardLocation(cardNumber, false);
         string newCardType = this->matriz.get_from_text(location_i, location_j);
         this->bothInMemory = false;
+        this->pageFault += 1;
         if(this->t1->playing == false){
             this->t1 = new tarjeta(newCardType, cardNumber);
             this->t1->cardIsPlaying();
@@ -312,10 +325,10 @@ public:
             this->t3 = NULL;
         }
         if(this->playedCards == 30){
-            return "-" + to_string(points);
+            return "-" + to_string(points) + " " + to_string(this->pageHit)+ " " + to_string(this->pageFault);
         }
         this->bothInMemory = true;
-        return to_string(points);
+        return to_string(points) + " " + to_string(this->pageHit)+ " " + to_string(this->pageFault);
     }
 
     void reset() {

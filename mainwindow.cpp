@@ -131,6 +131,8 @@ void MainWindow::on_pushButton_clicked()
         }
 
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton;
@@ -169,6 +171,8 @@ void MainWindow::on_pushButton_2_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_2;
@@ -208,6 +212,8 @@ void MainWindow::on_pushButton_3_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_3;
@@ -246,6 +252,8 @@ void MainWindow::on_pushButton_4_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_4;
@@ -284,6 +292,8 @@ void MainWindow::on_pushButton_5_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_5;
@@ -322,6 +332,8 @@ void MainWindow::on_pushButton_6_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_6;
@@ -360,6 +372,8 @@ void MainWindow::on_pushButton_7_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_7;
@@ -398,6 +412,8 @@ void MainWindow::on_pushButton_8_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_8;
@@ -436,6 +452,8 @@ void MainWindow::on_pushButton_9_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_9;
@@ -474,6 +492,8 @@ void MainWindow::on_pushButton_10_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_10;
@@ -512,6 +532,8 @@ void MainWindow::on_pushButton_11_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_11;
@@ -550,6 +572,8 @@ void MainWindow::on_pushButton_12_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_12;
@@ -588,6 +612,8 @@ void MainWindow::on_pushButton_13_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_13;
@@ -626,6 +652,8 @@ void MainWindow::on_pushButton_14_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_14;
@@ -664,6 +692,8 @@ void MainWindow::on_pushButton_15_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_15;
@@ -702,6 +732,8 @@ void MainWindow::on_pushButton_16_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_16;
@@ -740,6 +772,8 @@ void MainWindow::on_pushButton_17_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_17;
@@ -778,6 +812,8 @@ void MainWindow::on_pushButton_18_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_18;
@@ -816,6 +852,8 @@ void MainWindow::on_pushButton_19_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_19;
@@ -854,6 +892,8 @@ void MainWindow::on_pushButton_20_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_20;
@@ -892,6 +932,8 @@ void MainWindow::on_pushButton_21_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_21;
@@ -930,6 +972,8 @@ void MainWindow::on_pushButton_22_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_22;
@@ -968,6 +1012,8 @@ void MainWindow::on_pushButton_23_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_23;
@@ -1006,6 +1052,8 @@ void MainWindow::on_pushButton_24_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_24;
@@ -1044,6 +1092,8 @@ void MainWindow::on_pushButton_25_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_25;
@@ -1082,6 +1132,8 @@ void MainWindow::on_pushButton_26_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_26;
@@ -1120,6 +1172,8 @@ void MainWindow::on_pushButton_27_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_27;
@@ -1158,6 +1212,8 @@ void MainWindow::on_pushButton_28_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_28;
@@ -1196,6 +1252,8 @@ void MainWindow::on_pushButton_29_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_29;
@@ -1234,6 +1292,8 @@ void MainWindow::on_pushButton_30_clicked()
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/TipoE.png"));
         }
         this->points = stoi(commands[1]);
+        ui->label_16->setText(QString::fromStdString(commands[2]));
+        ui->label_17->setText(QString::fromStdString(commands[3]));
 
         if (this->firstPressed == this->ghost) {
             this->firstPressed = ui->pushButton_30;
