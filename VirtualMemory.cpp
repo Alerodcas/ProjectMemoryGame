@@ -269,14 +269,13 @@ public:
         if (this->count%2 == 0){
             if(this->firstCard == card2) {
                 if (card2 == "TipoA") {
-                    points += 5;
+                    points += 3;
                 }
                 if (card2 == "TipoD") {
-                    points += 3;
+                    points += 2;
                 } else if (card2 != "TipoA" and card2 != "TipoD") {
                     points += 1;
                 }
-
                 if (this->bothInMemory) {
                     points += 5;
                 }

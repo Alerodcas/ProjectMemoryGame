@@ -8,74 +8,75 @@
 #include <random>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+        : QMainWindow(parent)
+        , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ui->frame->hide();
-        ui->pushButton->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_2->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_3->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_4->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_5->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_6->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_7->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_8->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_9->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_10->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_11->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_12->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_13->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_14->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_15->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_16->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_17->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_18->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_19->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_20->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_21->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_22->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_23->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_24->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_25->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_26->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_27->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_28->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_29->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->pushButton_30->setIcon(
-                QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
-        ui->label_2->setText(QString::number(this->playerOnePoints));
-        ui->label_4->setText(QString::number(this->playerTwoPoints));
-    }
+    ui->frame_3->hide();
+    ui->pushButton->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_2->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_3->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_4->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_5->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_6->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_7->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_8->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_9->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_10->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_11->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_12->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_13->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_14->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_15->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_16->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_17->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_18->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_19->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_20->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_21->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_22->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_23->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_24->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_25->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_26->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_27->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_28->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_29->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->pushButton_30->setIcon(
+            QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+    ui->label_2->setText(QString::number(this->playerOnePoints));
+    ui->label_4->setText(QString::number(this->playerTwoPoints));
+}
 
 MainWindow::~MainWindow()
 {
@@ -99,16 +100,6 @@ vector<string> MainWindow::getWords(string text) {
     }
     cout << word << endl;
     return words;
-}
-
-void MainWindow::getUsedMemory(){
-    int id = getpid();
-    string string("pmap ");
-    string.append(to_string(id));
-    string.append(" | tail -n 1 | awk '/[0-9]K/{print $2}'");
-    char const *pchar = string.c_str();
-    cout << id << endl;
-    cout << system(pchar) << endl;
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -1166,35 +1157,49 @@ void MainWindow::on_pushButton_30_clicked()
 void MainWindow::on_pushButton_31_clicked()
 {
     if(this->secondPressed != this->ghost) {
-        if (this->points != 0) {
+        if (this->points > 0) {
             this->firstPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
             this->secondPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/dun.png"));
             this->firstPressed->setEnabled(false);
             this->secondPressed->setEnabled(false);
-        } else {
+            if (this->playingPlayer) {
+                this->playerOnePoints += this->points;
+                this->playingPlayer = false;
+                ui->label_6->setText(this->playerTwo);
+            }else {
+                this->playerTwoPoints += this->points;
+                this->playingPlayer = true;
+                ui->label_6->setText(this->playerOne);
+            }
+        } else if(this->points == 0){
             this->firstPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
             this->secondPressed->setIcon(
                     QIcon("/home/alejandra/build-Project01_memoryGame-Desktop_Qt_6_2_4_GCC_64bit-Debug/Resources/icon.png"));
+        }else if(this->points < 0){
+            if(this->playingPlayer){
+                this->playerOnePoints -= this->points;
+            }else{
+                this->playerTwoPoints -= this->points;
+            }
+            if(this->playerOnePoints > this->playerTwoPoints){
+                ui->label_12->setText(this->playerOne);
+            }else if(this->playerOnePoints < this->playerTwoPoints){
+                ui->label_12->setText(this->playerTwo);
+            }else{
+                ui->label_12->setText("It's a tie!");
+                ui->label_13->hide();
+            }
+            ui->frame->hide();
+            ui->frame_3->show();
         }
         this->firstPressed = this->ghost;
         this->secondPressed = this->ghost;
-
-        if (this->playingPlayer) {
-            this->playerOnePoints += this->points;
-            this->playingPlayer = false;
-            ui->label_6->setText(this->playerTwo);
-        } else {
-            this->playerTwoPoints += this->points;
-            this->playingPlayer = true;
-            ui->label_6->setText(this->playerOne);
-        }
     }
     ui->label_2->setText(QString::number(this->playerOnePoints));
     ui->label_4->setText(QString::number(this->playerTwoPoints));
-    this->getUsedMemory();
 }
 
 

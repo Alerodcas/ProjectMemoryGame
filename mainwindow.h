@@ -10,14 +10,14 @@ QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     int points;
-    bool playingPlayer = true;
+    bool playingPlayer;
     int playerOnePoints = 0;
     int playerTwoPoints = 0;
     QString playerOne;
@@ -28,8 +28,6 @@ public:
 
 private slots:
     std::vector<std::string> getWords(std::string text);
-
-    void getUsedMemory();
 
     void on_pushButton_clicked();
 
