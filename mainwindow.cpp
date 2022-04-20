@@ -1,9 +1,6 @@
-#include <sstream>
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "Client.cpp"
-#include <stdlib.h>
-#include <unistd.h>
 #include <iostream>
 #include <random>
 

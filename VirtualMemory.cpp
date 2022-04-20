@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <Tarjeta.cpp>
 #include <list>
+#include <unistd.h>
 
 using namespace std;
 
@@ -224,6 +225,19 @@ public:
         this->count = 0;
     }
 
+/**
+ * Imprime en la terminal la memoria que esta usando el servidor
+ */
+    void getUsedMemory(){
+        int id = getpid();
+        string string("pmap ");
+        string.append(to_string(id));
+        string.append(" | tail -n 1 | awk '/[0-9]K/{print $2}'");
+        char const *pchar = string.c_str();
+        cout << id << endl;
+        cout << system(pchar) << endl;
+    }
+
     /**
      * Mantiene la cuenta de cuantas carta se han volteado y llama la funcion para otener la carta que pide el servidor
      * @param cardNumber numero de la carta que se busca
@@ -265,6 +279,7 @@ public:
      * @return retorna un puntero a la carta que se busca
      */
     tarjeta * findInMemory(int cardNumber) {
+        this->getUsedMemory();
         if (this->t1->num == cardNumber) {
             this->t1->cardIsPlaying();
             this->pageHit += 1;

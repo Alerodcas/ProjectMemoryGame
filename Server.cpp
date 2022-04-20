@@ -10,19 +10,6 @@
 using namespace std;
 
 /**
- * Imprime en la terminal la memoria que esta usando el servidor
- */
-void getUsedMemory(){
-    int id = getpid();
-    string string("pmap ");
-    string.append(to_string(id));
-    string.append(" | tail -n 1 | awk '/[0-9]K/{print $2}'");
-    char const *pchar = string.c_str();
-    cout << id << endl;
-    cout << system(pchar) << endl;
-}
-
-/**
  * Inicia al servidor
  * @param pagedArray Recibe el Paged Array utilizado para jugar
  * @return
@@ -95,7 +82,7 @@ int startServer(PagedArray pagedArray){
             string points = pagedArray.compareCards(imgType);
             string response = imgType + " " + points + " ";
             send(clientSocket, response.c_str(), response.size() + 1, 0);
-            getUsedMemory();
+            //getUsedMemory();
         }
 
         // Close the socket
